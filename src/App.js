@@ -2,6 +2,7 @@ import Section from './components/Feedback/Section';
 import React, { Component } from 'react';
 import FeedbackOptions from './components/Feedback/FeedbackOptions';
 import Statistics from './components/Statistics/Statistics';
+import options from './data/options.json';
 
 class App extends Component {
   state = {
@@ -30,11 +31,7 @@ class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
-    const options = [
-      { id: 1, name: 'Good', type: 'good' },
-      { id: 2, name: 'Neutral', type: 'neutral' },
-      { id: 3, name: 'Bad', type: 'bad' },
-    ];
+    
     return (
       <div>
         <Section title="Please leave feedback">
